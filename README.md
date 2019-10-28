@@ -1,2 +1,2 @@
 # t-enum
-Typescript enum
+typescript enum
