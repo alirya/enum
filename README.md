@@ -1,0 +1,2 @@
+# t-enum
+Typescript enum
