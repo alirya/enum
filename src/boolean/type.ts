@@ -1,4 +1,4 @@
-export default function Is<Type>(value : any, type : Type) : value is Type {
+export default function Type<Type>(value : any, type : Type) : value is Type {
 
     for(let data in type) {
 
