@@ -12,6 +12,7 @@
     "downlevelIteration" : true,
     "strictNullChecks": true,
     "incremental": true,
+    "rootDir" : "spec",
     "tsBuildInfoFile": "./dist-spec/compiler-cache",
     "strictPropertyInitialization": true,
     "lib": [
@@ -22,7 +23,7 @@
     ]
   },
   "include":  [
-    "spec"
+    "spec/**/*"
 
   ],
   "exclude":   [
