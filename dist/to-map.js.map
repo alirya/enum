@@ -1,0 +1,1 @@
+{"version":3,"file":"to-map.js","sourceRoot":"","sources":["../src/to-map.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,KAAK,CAAQ,KAA6B;QAE9D,IAAI,GAAG,GAAwB,IAAI,GAAG,EAAiB,CAAC;QAExD,KAAI,IAAI,QAAQ,IAAI,KAAK,EAAE;YAEvB,GAAG,CAAC,GAAG,CAAC,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,CAAC,CAAA;SACrC;QAED,OAAO,GAAG,CAAC;IACf,CAAC;IAVD,wBAUC"}
