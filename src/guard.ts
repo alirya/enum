@@ -4,7 +4,7 @@ export default function Guard<ENUMERATE>(
     value : any,
     enumerate : ENUMERATE,
     error : (value: any) => Error = (value: any) => new Error('type expect enumerate, given ' + value)
-    ) : ENUMERATE {
+    ) : ENUMERATE[keyof ENUMERATE] {
 
     if(Type<ENUMERATE>(value, enumerate)) {
 

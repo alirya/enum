@@ -1,4 +1,4 @@
-export default function Type<ENUMERATE>(value : any, enumerate : ENUMERATE) : value is ENUMERATE {
+export default function Type<ENUMERATE>(value : any, enumerate : ENUMERATE) : value is ENUMERATE[keyof ENUMERATE] {
 
     for(let data in enumerate) {
 
