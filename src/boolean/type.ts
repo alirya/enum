@@ -1,8 +1,8 @@
-export default function Type<Type>(value : any, type : Type) : value is Type {
+export default function Type<ENUMERATE>(value : any, enumerate : ENUMERATE) : value is ENUMERATE {
 
-    for(let data in type) {
+    for(let data in enumerate) {
 
-        if(value === type[data]) {
+        if(value === enumerate[data]) {
 
             return true;
         }

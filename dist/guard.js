@@ -4,19 +4,18 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "./boolean/type"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Type(value, enumerate) {
-        for (let data in enumerate) {
-            if (value === enumerate[data]) {
-                return true;
-            }
+    const type_1 = require("./boolean/type");
+    function Guard(value, enumerate, error = (value) => new Error('type expect enumerate, given ' + value)) {
+        if (type_1.default(value, enumerate)) {
+            return value;
         }
-        return false;
+        throw error(value);
     }
-    exports.default = Type;
+    exports.default = Guard;
 });
-//# sourceMappingURL=type.js.map
+//# sourceMappingURL=guard.js.map

@@ -1,1 +1,1 @@
-export default function Type<Type>(value: any, type: Type): value is Type;
+export default function Type<ENUMERATE>(value: any, enumerate: ENUMERATE): value is ENUMERATE;
