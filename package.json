@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-enum",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "description": "Typescript enum",
   "dependencies": {
+    "@dikac/deployer": "^0.1.1",
     "@types/node": "^12.12.11",
-    "dist-mover": "0.0.9",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.7.2"
   },
@@ -21,11 +21,10 @@
     "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "postinstall": "npm run production",
-    "production": "dist-mover"
+    "postinstall": "npm-run-all deploy",
+    "deploy": "deployer /.git /dist /"
   },
   "files": [
-    "tsconfig.json",
     "dist/",
     "LICENSE",
     "Readme.md"
