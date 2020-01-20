@@ -1,1 +1,1 @@
-export default function Guard<ENUMERATE>(value: any, enumerate: ENUMERATE, error?: (value: any) => Error): ENUMERATE[keyof ENUMERATE];
+export default function Guard<Enumerate>(value: any, enumerate: Enumerate, error?: (value: any) => Error): Enumerate[keyof Enumerate];

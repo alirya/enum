@@ -1,4 +1,3 @@
-//= (value : any) : value is any => true
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);

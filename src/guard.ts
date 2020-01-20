@@ -1,12 +1,12 @@
 import Type from "./boolean/type";
 
-export default function Guard<ENUMERATE>(
+export default function Guard<Enumerate>(
     value : any,
-    enumerate : ENUMERATE,
+    enumerate : Enumerate,
     error : (value: any) => Error = (value: any) => new Error('type expect enumerate, given ' + value)
-    ) : ENUMERATE[keyof ENUMERATE] {
+    ) : Enumerate[keyof Enumerate] {
 
-    if(Type<ENUMERATE>(value, enumerate)) {
+    if(Type<Enumerate>(value, enumerate)) {
 
         return value;
     }

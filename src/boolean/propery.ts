@@ -1,4 +1,3 @@
-//= (value : any) : value is any => true
 
 export default function Property<Enumerate extends (string|number|symbol), Value = any>(
     object : object,
