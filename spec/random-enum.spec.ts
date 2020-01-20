@@ -1,4 +1,4 @@
-import RandomEnum from "../../dist/array/random-enum";
+import RandomEnum from "../dist/random-enum";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -30,19 +30,23 @@ for(let i = 0; i <= 10; i++) {
 
             let random = RandomEnum(Enumerate);
 
-            TOP : for (let value of random) {
+            let valid = false;
 
-                for(let property in Enumerate) {
+            for(let property in Enumerate) {
 
-                    if(Enumerate[property] === value) {
+                if(Enumerate[property] === random) {
 
-                        expect(Enumerate[property] === value).toBe(true);
-                        continue TOP;
-                    }
+                    expect(Enumerate[property] === random).toBe(true);
+                    valid = true;
+                    break;
                 }
+            }
+
+            if(!valid) {
 
                 fail({random : random, enumerate : Enumerate});
             }
+
 
         });
 

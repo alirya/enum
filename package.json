@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-enum",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Typescript enum",
   "dependencies": {
     "@dikac/t-boolean": "^0.5.0"
