@@ -1,1 +1,0 @@
-export default function Property<Enumerate extends (string | number | symbol), Value = any>(object: object, enumerate: Record<any, Enumerate>, value: (value: any) => value is Value): object is Record<Enumerate, Value>;

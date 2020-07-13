@@ -1,1 +1,0 @@
-{"version":3,"file":"type.js","sourceRoot":"","sources":["../../src/boolean/type.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,IAAI,CAAY,KAAW,EAAE,SAAqB;QAEtE,KAAI,IAAI,IAAI,IAAI,SAAS,EAAE;YAEvB,IAAG,KAAK,KAAK,SAAS,CAAC,IAAI,CAAC,EAAE;gBAE1B,OAAO,IAAI,CAAC;aACf;SACJ;QAED,OAAO,KAAK,CAAC;IAEjB,CAAC;IAZD,uBAYC"}
