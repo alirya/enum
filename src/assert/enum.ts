@@ -1,4 +1,4 @@
-import Guard from "../guard/enum";
+import Guard from "../boolean/enum";
 import Throwable from "./throwable/enum";
 import Function from "@dikac/t-function/function";
 

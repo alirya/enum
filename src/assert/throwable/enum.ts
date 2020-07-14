@@ -1,4 +1,4 @@
-import EnumType from "../string/enum";
+import EnumType from "../../boolean/string/enum";
 
 export default function Enum<Value>(
     value : unknown,

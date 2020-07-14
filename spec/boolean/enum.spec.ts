@@ -1,4 +1,4 @@
-import Type from "../../dist/guard/enum";
+import Type from "../../dist/boolean/enum";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
