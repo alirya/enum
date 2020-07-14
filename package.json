@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-enum",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Typescript enum",
   "dependencies": {
-    "@dikac/t-boolean": "git+file:///b:/t-boolean",
-    "@dikac/t-function": "git+file:///b:/t-function"
+    "@dikac/t-boolean": "^0.6.0",
+    "@dikac/t-function": "^0.4.0"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
