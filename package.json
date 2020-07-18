@@ -3,22 +3,22 @@
   "version": "0.9.6",
   "description": "Typescript enum",
   "dependencies": {
+    "@dikac/deployer": "^0.1.5",
     "@dikac/t-boolean": "^0.7.4",
-    "@dikac/t-function": "^0.9.0",
-    "@dikac/deployer": "^0.1.5"
+    "@dikac/t-function": "^0.9.1"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
     "@types/node": "^12.12.50",
     "cpy-cli": "^3.1.1",
     "jasmine": "^3.4.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "move-cli": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "^3.9.6",
-    "jasmine-ts-console-reporter": "^3.1.1"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "spec-run-js": "jasmine --config=./jasmine.json",
