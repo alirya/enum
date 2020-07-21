@@ -4,18 +4,19 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "../validatable/enum-dynamic"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Enum(valid, value, enumerate) {
-        let string = value.toString();
-        if (valid) {
-            return `value "${string}" is part of enum "${enumerate}"`;
+    const enum_dynamic_1 = require("../validatable/enum-dynamic");
+    class Enum {
+        constructor(enumerate, message) {
+            this.enumerate = enumerate;
+            this.message = message;
         }
-        else {
-            return `value "${string}" is not part of enum "${enumerate}"`;
+        validate(value) {
+            return new enum_dynamic_1.default(value, this.enumerate, this.message);
         }
     }
     exports.default = Enum;

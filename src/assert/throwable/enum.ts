@@ -5,5 +5,5 @@ export default function Enum<Value>(
     enumerate : Record<string, Value>
 ) : Error {
 
-    return new Error(EnumType(value, enumerate, false))
+    return new Error(EnumType(false, value, enumerate))
 }

@@ -4,19 +4,17 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "../../boolean/string/enum"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Enum(valid, value, enumerate) {
-        let string = value.toString();
-        if (valid) {
-            return `value "${string}" is part of enum "${enumerate}"`;
-        }
-        else {
-            return `value "${string}" is not part of enum "${enumerate}"`;
-        }
+    const enum_1 = require("../../boolean/string/enum");
+    /**
+     * message for between validation
+     */
+    function Enum(instance) {
+        return enum_1.default(instance.valid, instance.value, instance.enumerate);
     }
     exports.default = Enum;
 });

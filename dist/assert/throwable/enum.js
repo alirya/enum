@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const enum_1 = require("../../boolean/string/enum");
     function Enum(value, enumerate) {
-        return new Error(enum_1.default(value, enumerate, false));
+        return new Error(enum_1.default(false, value, enumerate));
     }
     exports.default = Enum;
 });

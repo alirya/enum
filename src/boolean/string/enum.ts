@@ -1,7 +1,7 @@
 export default function Enum<Value>(
+    valid : boolean,
     value : unknown,
     enumerate : Record<string, Value>,
-    valid : boolean
 ) : string {
 
     let string = (<any>value).toString();
