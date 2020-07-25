@@ -5,7 +5,9 @@
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-boolean": "^0.8.1",
+    "@dikac/t-string": "^0.11.8",
     "@dikac/t-function": "^0.10.1",
+    "@dikac/t-object": "^0.27.4",
     "@dikac/t-message": "^0.7.0",
     "@dikac/t-validatable": "^0.17.4",
     "@dikac/t-validator": "^0.9.4",

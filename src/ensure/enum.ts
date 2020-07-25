@@ -6,7 +6,7 @@ export default function Enum<Enumerate>(
     value : unknown,
     enumerate : Enumerate,
     error : Function<[Enumerate, unknown], Error> = Throwable
-    ) : Enumerate[keyof Enumerate] {
+) : Enumerate[keyof Enumerate] {
 
     Assert<Enumerate>(value, enumerate, error);
 
