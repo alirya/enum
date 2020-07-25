@@ -23,6 +23,6 @@ export default class Enum<Enumerate extends object, Msg>
 
     validate(value: unknown): Readonly<Return<Enumerate, Msg>> {
 
-        return <Return<Enumerate, Msg>> new EnumValidatable(value, this.enumerate, this.message);
+        return <any> new EnumValidatable(value, this.enumerate, this.message);
     }
 }

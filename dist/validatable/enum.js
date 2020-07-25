@@ -11,7 +11,8 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const enum_dynamic_1 = require("./enum-dynamic");
     function Enum(value, enumerate, message) {
-        return new enum_dynamic_1.default(value, enumerate, message);
+        let enums = new enum_dynamic_1.default(value, enumerate, message);
+        return enums;
     }
     exports.default = Enum;
 });

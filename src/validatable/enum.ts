@@ -14,5 +14,6 @@ export default function Enum<Msg, Enumerate extends object>(
     message : Function<[Readonly<Value<Return<Enumerate, Msg>> & Validatable & {enumerate:Enumerate}>], Msg>
 ) : Readonly<Return<Enumerate, Msg> & {enumerate : Enumerate}> {
 
-    return <Return<Enumerate, Msg> & {enumerate : Enumerate}> new EnumDynamic(value, enumerate, message);
+    let enums = new EnumDynamic(value, enumerate, message);
+    return <any> enums;
 }
