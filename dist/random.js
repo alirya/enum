@@ -17,8 +17,8 @@
                 keys.shift();
             }
         }
-        // @ts-ignore
-        return enumerate[keys.shift()];
+        let key = keys.shift();
+        return enumerate[key];
     }
     exports.default = Random;
 });

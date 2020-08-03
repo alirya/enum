@@ -2,12 +2,13 @@ import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
+import EnumValidatable from "../validatable/enum-dynamic";
 import Function from "@dikac/t-function/function";
 import { Object } from "ts-toolbelt";
-export declare type Return<Enumerate extends object, Msg> = (Value<Object.UnionOf<Enumerate>> & Message<Msg> & Validatable<true>) | (Value<unknown> & Message<Msg> & Validatable<false>);
-export default class Enum<Enumerate extends object, Msg> implements Validator<number, Validatable & Message<Msg> & Value<unknown>>, Message<Function<[Readonly<Value<unknown> & Validatable>], Msg>> {
+import Return from "@dikac/t-validator/return/return";
+export default class Enum<Enumerate extends object, MessageT> implements Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate>>, Message<Function<[Readonly<Value<unknown> & Validatable>], MessageT>> {
     enumerate: Enumerate;
-    message: Function<[Readonly<Value<unknown> & Validatable>], Msg>;
-    constructor(enumerate: Enumerate, message: Function<[Readonly<Value<unknown> & Validatable>], Msg>);
-    validate(value: unknown): Readonly<Return<Enumerate, Msg>>;
+    message: Function<[Readonly<Value<unknown> & Validatable>], MessageT>;
+    constructor(enumerate: Enumerate, message: Function<[Readonly<Value<unknown> & Validatable>], MessageT>);
+    validate<Argument extends unknown>(value: Argument): Return<unknown, Argument, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate>>;
 }

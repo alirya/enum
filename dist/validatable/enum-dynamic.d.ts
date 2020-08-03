@@ -4,9 +4,9 @@ import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import MergeWrapper from "@dikac/t-value/message/readonly-merge";
 import { Object } from "ts-toolbelt";
-export default class EnumDynamic<Msg, Enumerate extends object> extends MergeWrapper<Value<unknown | Object.UnionOf<Enumerate>>, Message<Msg>, Validatable> {
+export default class EnumDynamic<MessageT, Enumerate extends object> extends MergeWrapper<Value<unknown | Object.UnionOf<Enumerate>>, Message<MessageT>, Validatable> {
     readonly enumerate: Enumerate;
     constructor(value: unknown, enumerate: Enumerate, message: Function<[Readonly<Value<unknown | Object.UnionOf<Enumerate>> & Validatable & {
         enumerate: Enumerate;
-    }>], Msg>);
+    }>], MessageT>);
 }

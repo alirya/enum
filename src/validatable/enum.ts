@@ -1,15 +1,19 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import Function from "@dikac/t-function/function";
+import Function from "@dikac/t-function/function-single";
 import EnumDynamic from "./enum-dynamic";
-import {Return} from "../validator/enum";
+import {Object} from "ts-toolbelt";
+import EnumValidatable from "./enum-dynamic";
+import ValidatorReturn from "@dikac/t-validator/return/return";
 
-export default function Enum<Msg, Enumerate extends object>(
-    value : unknown,
+type Return<Message, Enumerate extends object, Argument extends unknown> =
+    ValidatorReturn<unknown, Argument, Object.UnionOf<Enumerate>, EnumValidatable<Message, Enumerate>> & {enumerate : Enumerate};
+
+export default function Enum<Message, Enumerate extends object, Argument extends unknown>(
+    value : Argument,
     enumerate : Enumerate,
-    message : Function<[Readonly<Value<Return<Enumerate, Msg>> & Validatable & {enumerate:Enumerate}>], Msg>
-) : Readonly<Return<Enumerate, Msg> & {enumerate : Enumerate}> {
+    message : Function<Omit<Return<Message, Enumerate, Argument>, 'message'>, Message>
+) :  Return<Message, Enumerate, Argument> {
 
-    let enums = new EnumDynamic(value, enumerate, message);
-    return <any> enums;
+    return <Return<Message, Enumerate, Argument>> new EnumDynamic(value, enumerate, message);
 }

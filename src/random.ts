@@ -2,7 +2,7 @@ import RandomBoolean from "@dikac/t-boolean/random";
 
 export default function Random<Enumerate extends Record<string, number|string>>(enumerate : Enumerate) : Enumerate[keyof Enumerate] {
 
-    let keys = Object.keys(enumerate);
+    let keys : (keyof Enumerate)[] = Object.keys(enumerate);
 
     while (keys.length > 1) {
 
@@ -12,7 +12,9 @@ export default function Random<Enumerate extends Record<string, number|string>>(
         }
     }
 
-    // @ts-ignore
-    return enumerate[<[keyof Enumerate]>keys.shift()];
+    let key = <keyof Enumerate>keys.shift();
+
+
+    return enumerate[key];
 }
 
