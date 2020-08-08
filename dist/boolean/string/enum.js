@@ -4,22 +4,26 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-string/safe-cast", "@dikac/t-object/string/name"], factory);
+        define(["require", "exports"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const safe_cast_1 = require("@dikac/t-string/safe-cast");
-    const name_1 = require("@dikac/t-object/string/name");
-    function Enum(valid, value, enumerate) {
-        let string = safe_cast_1.default(value);
-        let enums = name_1.default(enumerate);
-        if (valid) {
-            return `value "${string}" is part of enum "${enums}"`;
+    function Enum(valid, value, enumerate, valueCast, enumerateCast) {
+        let messages = [];
+        messages.push('value');
+        if (valueCast) {
+            messages.push(valueCast(value));
         }
-        else {
-            return `value "${string}" is not part of enum "${enums}"`;
+        messages.push('is');
+        if (!valid) {
+            messages.push('not');
         }
+        messages.push('part of enum');
+        if (enumerateCast) {
+            messages.push(enumerateCast(enumerate));
+        }
+        return messages.join(' ');
     }
     exports.default = Enum;
 });

@@ -1,10 +1,8 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
 import Function from "@dikac/t-function/function-single";
 import EnumDynamic from "./enum-dynamic";
 import {Object} from "ts-toolbelt";
 import EnumValidatable from "./enum-dynamic";
-import ValidatorReturn from "@dikac/t-validator/return/return";
+import ValidatorReturn from "@dikac/t-validator/validatable/simple";
 
 type Return<Message, Enumerate extends object, Argument extends unknown> =
     ValidatorReturn<unknown, Argument, Object.UnionOf<Enumerate>, EnumValidatable<Message, Enumerate>> & {enumerate : Enumerate};

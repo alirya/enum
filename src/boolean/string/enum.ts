@@ -1,22 +1,36 @@
-import SafeCast from "@dikac/t-string/safe-cast";
-import Name from "@dikac/t-object/string/name";
+import Function from "@dikac/t-function/function-single";
 
-export default function Enum<Value>(
+export default function Enum<Value, Enumerate extends Record<string, Value>>(
     valid : boolean,
     value : unknown,
-    enumerate : Record<string, Value>,
+    enumerate : Enumerate,
+    valueCast ?: Function<unknown, string>,
+    enumerateCast ?: Function<Enumerate, string>,
 ) : string {
 
-    let string = SafeCast(value);
-    let enums = Name(enumerate);
+    let messages : string[] = [];
 
-    if(valid) {
+    messages.push('value');
 
-        return `value "${string}" is part of enum "${enums}"`;
+    if(valueCast) {
 
-    } else {
-
-        return `value "${string}" is not part of enum "${enums}"`;
+        messages.push(valueCast(value));
     }
+
+    messages.push('is');
+
+    if(!valid) {
+
+        messages.push('not');
+    }
+
+    messages.push('part of enum');
+
+    if(enumerateCast) {
+
+        messages.push(enumerateCast(enumerate));
+    }
+
+    return messages.join(' ');
 }
 
