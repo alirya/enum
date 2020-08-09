@@ -6,9 +6,11 @@ import EnumValidatable from "../validatable/enum-dynamic";
 import Function from "@dikac/t-function/function";
 import { Object } from "ts-toolbelt";
 import Return from "@dikac/t-validator/validatable/simple";
-export default class Enum<Enumerate extends object, MessageT> implements Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate>>, Message<Function<[Readonly<Value<unknown> & Validatable>], MessageT>> {
+import Replace from "@dikac/t-validatable/boolean/replace";
+export default class Enum<Enumerate extends object, MessageT> implements Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate, Object.UnionOf<Enumerate>>>, Message<Function<[Readonly<Value<unknown> & Validatable>], MessageT>> {
     enumerate: Enumerate;
     message: Function<[Readonly<Value<unknown> & Validatable>], MessageT>;
     constructor(enumerate: Enumerate, message: Function<[Readonly<Value<unknown> & Validatable>], MessageT>);
-    validate<Argument extends unknown>(value: Argument): Return<unknown, Argument, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate>>;
+    validate<Argument extends Object.UnionOf<Enumerate>>(value: Argument): Replace<EnumValidatable<MessageT, Enumerate, Argument>, true>;
+    validate<Argument extends unknown>(value: Argument): Return<unknown, Argument, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate, Argument>>;
 }

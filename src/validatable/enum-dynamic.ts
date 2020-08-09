@@ -7,13 +7,13 @@ import {Object} from "ts-toolbelt";
 import MessageCallback from "@dikac/t-validator/validatable/callback";
 import EnumGuard from "../boolean/enum";
 
-export default class EnumDynamic<MessageT, Enumerate extends object>
+export default class EnumDynamic<MessageT, Enumerate extends object, ValueT>
     extends MergeWrapper<Value<unknown|Object.UnionOf<Enumerate>>, Message<MessageT>, Validatable>
 {
     readonly enumerate : Enumerate;
 
     constructor(
-        value : unknown,
+        value : ValueT,
         enumerate : Enumerate,
         message : Function<[Readonly<Value<unknown|Object.UnionOf<Enumerate>> & Validatable & {enumerate:Enumerate}>], MessageT>
     ) {
