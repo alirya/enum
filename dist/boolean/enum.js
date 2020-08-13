@@ -9,6 +9,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check {@param value} is part of {@param enumerate}
+     *
+     * @param value
+     * @param enumerate
+     */
     function Enum(value, enumerate) {
         for (let data in enumerate) {
             if (value === enumerate[data]) {

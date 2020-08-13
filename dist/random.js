@@ -10,6 +10,11 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const random_1 = require("@dikac/t-boolean/random");
+    /**
+     * pick random enum value
+     *
+     * @param enumerate
+     */
     function Random(enumerate) {
         let keys = Object.keys(enumerate);
         while (keys.length > 1) {

@@ -10,6 +10,11 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const random_1 = require("@dikac/t-boolean/random");
+    /**
+     * pick multiple enum values
+     *
+     * @param enumerate
+     */
     function Randoms(enumerate) {
         let values = [];
         for (let property in enumerate) {
