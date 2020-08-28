@@ -1,4 +1,3 @@
-import Function from "@dikac/t-function/function";
 /**
  * assert {@param value} is part of {@param enumerate}
  *
@@ -6,4 +5,4 @@ import Function from "@dikac/t-function/function";
  * @param enumerate
  * @param error
  */
-export default function Enum<Enumerate>(value: unknown, enumerate: Enumerate, error?: Function<[Enumerate, unknown], Error>): asserts value is Enumerate[keyof Enumerate];
+export default function Enum<Enumerate extends Record<string, any>>(value: unknown, enumerate: Enumerate, error?: (value: unknown, enumerate: Enumerate) => Error): asserts value is Enumerate[keyof Enumerate];

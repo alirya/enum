@@ -1,1 +1,1 @@
-export default function Enum<Value>(value: unknown, enumerate: Record<string, Value>): Error;
+export default function Enum<Enumerate extends Record<string, any>>(value: unknown, enumerate: Enumerate): Error;

@@ -1,4 +1,3 @@
-import Function from "@dikac/t-function/function-single";
 import EnumDynamic from "./enum-dynamic";
 import {Object} from "ts-toolbelt";
 import EnumValidatable from "./enum-dynamic";
@@ -10,7 +9,7 @@ type Return<Message, Enumerate extends object, Argument extends unknown> =
 export default function Enum<Message, Enumerate extends object, Argument extends unknown>(
     value : Argument,
     enumerate : Enumerate,
-    message : Function<Omit<Return<Message, Enumerate, Argument>, 'message'>, Message>
+    message : (result:Omit<Return<Message, Enumerate, Argument>, 'message'>)=>Message
 ) :  Return<Message, Enumerate, Argument> {
 
     return <Return<Message, Enumerate, Argument>> new EnumDynamic(value, enumerate, message);

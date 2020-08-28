@@ -1,5 +1,4 @@
 import Assert from "../assert/enum";
-import Function from "@dikac/t-function/function";
 import Throwable from "../assert/throwable/enum";
 
 /**
@@ -10,10 +9,10 @@ import Throwable from "../assert/throwable/enum";
  * @param enumerate
  * @param error
  */
-export default function Enum<Enumerate>(
+export default function Enum<Enumerate extends Record<string, any>>(
     value : unknown,
     enumerate : Enumerate,
-    error : Function<[Enumerate, unknown], Error> = Throwable
+    error : (value:unknown, enumerate:Enumerate)=>Error = Throwable
 ) : Enumerate[keyof Enumerate] {
 
     Assert<Enumerate>(value, enumerate, error);

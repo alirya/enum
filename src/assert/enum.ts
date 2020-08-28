@@ -1,6 +1,5 @@
 import Guard from "../boolean/enum";
 import Throwable from "./throwable/enum";
-import Function from "@dikac/t-function/function";
 
 /**
  * assert {@param value} is part of {@param enumerate}
@@ -10,15 +9,15 @@ import Function from "@dikac/t-function/function";
  * @param error
  */
 
-export default function Enum<Enumerate>(
+export default function Enum<Enumerate extends Record<string, any>>(
     value : unknown,
     enumerate : Enumerate,
-    error : Function<[Enumerate, unknown], Error> = Throwable
+    error : (value:unknown, enumerate:Enumerate)=>Error = Throwable
 ) : asserts value is Enumerate[keyof Enumerate] {
 
     if(!Guard<Enumerate>(value, enumerate)) {
 
-        throw error(enumerate, value);
+        throw error(value, enumerate);
     }
 }
 
