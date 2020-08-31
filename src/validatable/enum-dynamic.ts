@@ -3,7 +3,7 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
 import {Object} from "ts-toolbelt";
-import MessageCallback from "@dikac/t-validator/validatable/callback";
+import MessageCallback from "@dikac/t-validator/validatable/callback-function";
 import EnumGuard from "../boolean/enum";
 
 export default class EnumDynamic<MessageT, Enumerate extends object, ValueT>
