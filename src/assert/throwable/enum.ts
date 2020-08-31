@@ -1,8 +1,8 @@
-import EnumType from "../../boolean/string/enum";
+import EnumType from "../string/enum";
 
-export default function Enum<Enumerate extends Record<string, any>>(
+export default function Enum(
     value : unknown,
-    enumerate : Enumerate
+    enumerate : string = ''
 ) : Error {
 
     return new Error(EnumType(false, value, enumerate))

@@ -12,12 +12,12 @@ import Throwable from "./throwable/enum";
 export default function Enum<Enumerate extends Record<string, any>>(
     value : unknown,
     enumerate : Enumerate,
-    error : (value:unknown, enumerate:Enumerate)=>Error = Throwable
+    error : (value:unknown)=>Error = Throwable
 ) : asserts value is Enumerate[keyof Enumerate] {
 
     if(!Guard<Enumerate>(value, enumerate)) {
 
-        throw error(value, enumerate);
+        throw error(value);
     }
 }
 

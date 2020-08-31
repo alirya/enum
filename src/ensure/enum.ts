@@ -12,7 +12,7 @@ import Throwable from "../assert/throwable/enum";
 export default function Enum<Enumerate extends Record<string, any>>(
     value : unknown,
     enumerate : Enumerate,
-    error : (value:unknown, enumerate:Enumerate)=>Error = Throwable
+    error : (value:unknown)=>Error = Throwable
 ) : Enumerate[keyof Enumerate] {
 
     Assert<Enumerate>(value, enumerate, error);

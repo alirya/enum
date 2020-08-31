@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/enum"], factory);
+        define(["require", "exports", "../../assert/string/enum"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const enum_1 = require("../../boolean/string/enum");
+    const enum_1 = require("../../assert/string/enum");
     /**
      * message for between validation
      */

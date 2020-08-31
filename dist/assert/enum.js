@@ -20,7 +20,7 @@
      */
     function Enum(value, enumerate, error = enum_2.default) {
         if (!enum_1.default(value, enumerate)) {
-            throw error(value, enumerate);
+            throw error(value);
         }
     }
     exports.default = Enum;

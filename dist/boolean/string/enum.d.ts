@@ -1,1 +1,0 @@
-export default function Enum<Value, Enumerate extends Record<string, Value>>(valid: boolean, value: unknown, enumerate: Enumerate, valueCast?: (value: unknown) => string, enumerateCast?: (enumerate: Enumerate) => string): string;

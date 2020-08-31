@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import EnumParameter from "../../boolean/string/enum";
+import EnumParameter from "../../assert/string/enum";
 import {Object} from "ts-toolbelt";
 
 /**
