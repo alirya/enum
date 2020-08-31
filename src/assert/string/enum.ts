@@ -4,10 +4,10 @@ import Name from "@dikac/t-object/string/name";
 const sentence = new Sentence(
     false,
     '',
-    [
-        'is not value of enum',
-        'is value of enum',
-    ], ''
+    {
+        invalid:'is not value of enum',
+        valid:'is value of enum',
+    }, ''
 );
 
 

@@ -1,14 +1,14 @@
 {
   "name": "@dikac/t-enum",
-  "version": "0.9.19",
+  "version": "0.9.20",
   "description": "Typescript enum",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-object": "^0.32.1",
     "@dikac/t-boolean": "^0.9.3",
-    "@dikac/t-message": "^0.9.0",
+    "@dikac/t-message": "^0.9.1",
+    "@dikac/t-object": "^0.32.2",
     "@dikac/t-validatable": "^0.18.6",
-    "@dikac/t-validator": "^0.16.1",
+    "@dikac/t-validator": "^0.16.2",
     "@dikac/t-value": "^0.12.4",
     "ts-toolbelt": "^6.15.5"
   },
@@ -22,7 +22,7 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "^4.0.2"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "spec-run-js": "jasmine --config=./jasmine.json",
