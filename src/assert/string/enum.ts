@@ -1,15 +1,5 @@
-import Sentence from "@dikac/t-message/sentence";
+import Sentence from "@dikac/t-string/message/sentence";
 import Name from "@dikac/t-object/string/name";
-
-const sentence = new Sentence(
-    false,
-    '',
-    {
-        invalid:'is not value of enum',
-        valid:'is value of enum',
-    }, ''
-);
-
 
 export default function Enum(
     valid : boolean,
@@ -18,9 +8,16 @@ export default function Enum(
     subject : string = ''
 ) : string {
 
-    sentence.subject = subject;
-    sentence.valid = valid;
-    sentence.object = enumerate;
+    const sentence = new Sentence(
+        valid,
+        subject,
+        {
+            invalid:'is not value of enum',
+            valid:'is value of enum',
+        }, ''
+    );
+
+    sentence.type = enumerate;
     return sentence.message;
 
 }

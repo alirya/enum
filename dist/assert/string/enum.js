@@ -4,20 +4,18 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-message/sentence"], factory);
+        define(["require", "exports", "@dikac/t-string/message/sentence"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const sentence_1 = require("@dikac/t-message/sentence");
-    const sentence = new sentence_1.default(false, '', {
-        invalid: 'is not value of enum',
-        valid: 'is value of enum',
-    }, '');
+    const sentence_1 = require("@dikac/t-string/message/sentence");
     function Enum(valid, value, enumerate = '', subject = '') {
-        sentence.subject = subject;
-        sentence.valid = valid;
-        sentence.object = enumerate;
+        const sentence = new sentence_1.default(valid, subject, {
+            invalid: 'is not value of enum',
+            valid: 'is value of enum',
+        }, '');
+        sentence.type = enumerate;
         return sentence.message;
     }
     exports.default = Enum;
