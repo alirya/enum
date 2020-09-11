@@ -6,6 +6,7 @@
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-boolean": "^0.9.3",
     "@dikac/t-message": "^0.10.4",
+    "@dikac/t-string": "^0.14.1",
     "@dikac/t-object": "^0.33.4",
     "@dikac/t-validatable": "^0.18.9",
     "@dikac/t-validator": "^0.16.6",
