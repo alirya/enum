@@ -1,4 +1,4 @@
-import Sentence from "@dikac/t-string/message/sentence";
+import Sentences from "@dikac/t-string/message/sentences-must";
 import Name from "@dikac/t-object/string/name";
 
 export default function Enum(
@@ -8,16 +8,9 @@ export default function Enum(
     subject : string = ''
 ) : string {
 
-    const sentence = new Sentence(
-        valid,
-        subject,
-        {
-            invalid:'is not value of enum',
-            valid:'is value of enum',
-        }, ''
-    );
+    const sentence = Sentences(valid, [subject]);
 
-    sentence.type = enumerate;
+    sentence.expect = ['value of enum', enumerate];
     return sentence.message;
 
 }
