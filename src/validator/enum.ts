@@ -7,11 +7,21 @@ import {Object} from "ts-toolbelt";
 import Return from "@dikac/t-validator/validatable/simple";
 import Replace from "@dikac/t-validatable/boolean/replace";
 
+/**
+ * validate if given value is part of certain enumerate
+ */
 export default class Enum<Enumerate extends object, MessageT>
     implements
         Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate, Object.UnionOf<Enumerate>>>,
         Message<(result:Readonly<Value<unknown> & Validatable>)=> MessageT>
 {
+    /**
+     * @param enumerate
+     * enumerate source
+     *
+     * @param message
+     * message factory
+     */
     constructor(
         public enumerate : Enumerate,
         public message : (result:Readonly<Value<unknown> & Validatable>)=> MessageT

@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * convert enumerate to {@see Map}
+     * @param value
+     */
     function Map(value) {
         let map = new globalThis.Map();
         for (let property in value) {

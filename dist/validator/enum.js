@@ -10,7 +10,17 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const enum_dynamic_1 = require("../validatable/enum-dynamic");
+    /**
+     * validate if given value is part of certain enumerate
+     */
     class Enum {
+        /**
+         * @param enumerate
+         * enumerate source
+         *
+         * @param message
+         * message factory
+         */
         constructor(enumerate, message) {
             this.enumerate = enumerate;
             this.message = message;
