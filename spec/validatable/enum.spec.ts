@@ -49,7 +49,7 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validatable = Validatable(<unknown>EnumSpec.DATA, EnumSpec, EnumMessage);;
+        let validatable = Validatable(<unknown>EnumSpec.DATA, EnumSpec, EnumMessage);
 
         try {
             // @ts-expect-error

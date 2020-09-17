@@ -1,21 +1,8 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../assert/string/enum"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const enum_1 = require("../../assert/string/enum");
-    /**
-     * message for between validation
-     */
-    function Enum(instance) {
-        return enum_1.default(instance.valid, instance.value, instance.enumerate);
-    }
-    exports.default = Enum;
-});
+import EnumParameter from "../../assert/string/enum";
+/**
+ * message for between validation
+ */
+export default function Enum(instance) {
+    return EnumParameter(instance.valid, instance.value, instance.enumerate);
+}
 //# sourceMappingURL=enum.js.map
