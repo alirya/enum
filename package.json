@@ -1,16 +1,16 @@
 {
   "name": "@dikac/t-enum",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Typescript enum",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-boolean": "^0.10.0",
-    "@dikac/t-message": "^0.11.0",
-    "@dikac/t-object": "^0.35.0",
-    "@dikac/t-string": "^0.15.0",
-    "@dikac/t-validatable": "^0.19.0",
-    "@dikac/t-validator": "^0.17.0",
-    "@dikac/t-value": "^0.14.0",
+    "@dikac/t-boolean": "^0.10.1",
+    "@dikac/t-message": "^0.11.1",
+    "@dikac/t-object": "^0.35.2",
+    "@dikac/t-string": "^0.15.2",
+    "@dikac/t-validatable": "^0.19.1",
+    "@dikac/t-validator": "^0.17.1",
+    "@dikac/t-value": "^0.14.1",
     "ts-toolbelt": "^8.0.6"
   },
   "devDependencies": {
@@ -24,12 +24,11 @@
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
     "typescript": "^4.0.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "esm": "^3.2.25"
   },
   "scripts": {
-    "spec-run-js": "babel-node dist-spec/jasmine-js.js",
-    "spec-run": "babel-node dist-spec/jasmine-ts.js",
+    "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
+    "spec-run": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --reporter=jasmine-ts-console-reporter",
     "spec": "npm-run-all spec-compile spec-run",
     "spec-ensure-directory": "mkdirp dist-spec",
     "spec-compile": "npm-run-all spec-compile-script spec-cleanup",
