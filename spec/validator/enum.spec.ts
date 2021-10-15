@@ -12,8 +12,8 @@ describe(`compiler compatible`,function() {
 
     it(`valid value`,function() {
 
-        let validator = new Validator(EnumSpec, NumberMessage);
-        let validatable = validator.validate(<unknown>EnumSpec.DATA);
+        let validator = Validator(EnumSpec, NumberMessage);
+        let validatable = validator(<unknown>EnumSpec.DATA);
 
         if(validatable.valid) {
 
@@ -31,8 +31,8 @@ describe(`compiler compatible`,function() {
 
     it(`invalid value`,function() {
 
-        let validator = new Validator(EnumSpec, NumberMessage);
-        let validatable = validator.validate({});
+        let validator = Validator(EnumSpec, NumberMessage);
+        let validatable = validator({});
 
         if(validatable.valid) {
 
@@ -51,8 +51,8 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validator = new Validator(EnumSpec, NumberMessage);
-        let validatable = validator.validate(EnumSpec.DATA);
+        let validator = Validator(EnumSpec, NumberMessage);
+        let validatable = validator(EnumSpec.DATA);
 
         try {
             // @ts-expect-error
@@ -92,8 +92,8 @@ describe(`validate value`,function() {
 
     it(`valid`,function() {
 
-        let validator = new Validator(EnumSpec, NumberMessage);
-        let validatable = validator.validate(EnumSpec.DATA);
+        let validator = Validator(EnumSpec, NumberMessage);
+        let validatable = validator(EnumSpec.DATA);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(EnumSpec.DATA);
@@ -103,8 +103,8 @@ describe(`validate value`,function() {
 
     it(`invalid`,function() {
 
-        let validator = new Validator(EnumSpec, NumberMessage);
-        let validatable = validator.validate('a');
+        let validator = Validator(EnumSpec, NumberMessage);
+        let validatable = validator('a');
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toBe('a');
