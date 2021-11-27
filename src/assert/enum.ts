@@ -1,24 +1,11 @@
-import Guard from "../boolean/enum";
-import Throwable from "./throwable/enum";
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
 
-/**
- * assert {@param value} is part of {@param enumerate}
- *
- * @param value
- * @param enumerate
- * @param error
- */
+namespace Enum {
 
-export default function Enum<Enumerate extends Record<string, any>>(
-    value : unknown,
-    enumerate : Enumerate,
-    error : (value:unknown)=>Error = Throwable
-) : asserts value is Enumerate[keyof Enumerate] {
-
-    if(!Guard<Enumerate>(value, enumerate)) {
-
-        throw error(value);
-    }
+    export const Parameter = EnumParameter;
+    export const Parameters = EnumParameters;
 }
 
+export default Enum;
 

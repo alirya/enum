@@ -1,4 +1,4 @@
-import RandomEnum from "../../dist/array/randoms";
+import RandomEnum from "../../dist/array/randoms-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

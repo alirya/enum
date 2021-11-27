@@ -1,25 +1,11 @@
-import RandomBoolean from "@dikac/t-boolean/random";
+import RandomParameter from "./random-parameter";
+import RandomParameters from "./random-parameters";
 
-/**
- * pick random enum value
- *
- * @param enumerate
- */
-export default function Random<Enumerate extends Record<string, number|string>>(enumerate : Enumerate) : Enumerate[keyof Enumerate] {
+namespace Random {
 
-    let keys : (keyof Enumerate)[] = Object.keys(enumerate);
-
-    while (keys.length > 1) {
-
-        if(RandomBoolean()) {
-
-            keys.shift();
-        }
-    }
-
-    let key = <keyof Enumerate>keys.shift();
-
-
-    return enumerate[key];
+    export const Parameter = RandomParameter;
+    export const Parameters = RandomParameters;
 }
+
+export default Random;
 

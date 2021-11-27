@@ -1,17 +1,11 @@
-import Sentences from "@dikac/t-string/message/sentences-must";
-import Name from "@dikac/t-object/string/name";
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
 
-export default function Enum(
-    valid : boolean,
-    value : unknown,
-    enumerate : string = '',
-    subject : string = ''
-) : string {
+namespace Enum {
 
-    const sentence = Sentences(valid, [subject]);
-
-    sentence.expect = ['value of enum', enumerate];
-    return sentence.message;
-
+    export const Parameter = EnumParameter;
+    export const Parameters = EnumParameters;
 }
+
+export default Enum;
 

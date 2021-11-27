@@ -1,9 +1,11 @@
-import EnumType from "../string/enum";
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
 
-export default function Enum(
-    value : unknown,
-    enumerate : string = ''
-) : Error {
+namespace Enum {
 
-    return new Error(EnumType(false, value, enumerate))
+    export const Parameter = EnumParameter;
+    export const Parameters = EnumParameters;
 }
+
+export default Enum;
+

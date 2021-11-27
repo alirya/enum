@@ -1,4 +1,4 @@
-import Enum from "../../../dist/assert/string/enum";
+import Enum from "../../../dist/assert/string/enum-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -10,20 +10,20 @@ enum EnumTest {
 
 it('true', ()=>{
 
-    expect(Enum(true, EnumTest.a)).toBe('is value of enum.');
+    expect(Enum(EnumTest.a, true)).toBe('value is value of enum.');
 })
 
 it('true + name', ()=>{
 
-    expect(Enum(true, EnumTest.a, 'EnumTest')).toBe('is value of enum EnumTest.');
+    expect(Enum(EnumTest.a, true, 'EnumTest')).toBe('value is value of enum EnumTest.');
 })
 
 it('false', ()=>{
 
-    expect(Enum(false, EnumTest.a)).toBe('must value of enum.');
+    expect(Enum(EnumTest.a, false)).toBe('value must value of enum.');
 })
 
 it('false + name', ()=>{
 
-    expect(Enum(false, EnumTest.a, 'EnumTest')).toBe('must value of enum EnumTest.');
+    expect(Enum(EnumTest.a, false, 'EnumTest')).toBe('value must value of enum EnumTest.');
 })

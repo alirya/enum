@@ -1,4 +1,4 @@
-import Type from "../../dist/assert/enum";
+import Type from "../../dist/assert/enum-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,17 +1,9 @@
-import RandomBoolean from "@dikac/t-boolean/random";
-/**
- * pick random enum value
- *
- * @param enumerate
- */
-export default function Random(enumerate) {
-    let keys = Object.keys(enumerate);
-    while (keys.length > 1) {
-        if (RandomBoolean()) {
-            keys.shift();
-        }
-    }
-    let key = keys.shift();
-    return enumerate[key];
-}
+import RandomParameter from "./random-parameter";
+import RandomParameters from "./random-parameters";
+var Random;
+(function (Random) {
+    Random.Parameter = RandomParameter;
+    Random.Parameters = RandomParameters;
+})(Random || (Random = {}));
+export default Random;
 //# sourceMappingURL=random.js.map

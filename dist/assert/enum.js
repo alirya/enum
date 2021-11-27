@@ -1,15 +1,9 @@
-import Guard from "../boolean/enum";
-import Throwable from "./throwable/enum";
-/**
- * assert {@param value} is part of {@param enumerate}
- *
- * @param value
- * @param enumerate
- * @param error
- */
-export default function Enum(value, enumerate, error = Throwable) {
-    if (!Guard(value, enumerate)) {
-        throw error(value);
-    }
-}
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
+var Enum;
+(function (Enum) {
+    Enum.Parameter = EnumParameter;
+    Enum.Parameters = EnumParameters;
+})(Enum || (Enum = {}));
+export default Enum;
 //# sourceMappingURL=enum.js.map

@@ -1,8 +1,7 @@
-/**
- * assert {@param value} is part of {@param enumerate}
- *
- * @param value
- * @param enumerate
- * @param error
- */
-export default function Enum<Enumerate extends Record<string, any>>(value: unknown, enumerate: Enumerate, error?: (value: unknown) => Error): asserts value is Enumerate[keyof Enumerate];
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
+declare namespace Enum {
+    const Parameter: typeof EnumParameter;
+    const Parameters: typeof EnumParameters;
+}
+export default Enum;

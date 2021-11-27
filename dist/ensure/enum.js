@@ -1,15 +1,9 @@
-import Assert from "../assert/enum";
-import Throwable from "../assert/throwable/enum";
-/**
- * assert {@param value} is part of {@param enumerate}, if valid
- * return {@param value}
- *
- * @param value
- * @param enumerate
- * @param error
- */
-export default function Enum(value, enumerate, error = Throwable) {
-    Assert(value, enumerate, error);
-    return value;
-}
+import EnumParameter from "./enum-parameter";
+import EnumParameters from "./enum-parameters";
+var Enum;
+(function (Enum) {
+    Enum.Parameter = EnumParameter;
+    Enum.Parameters = EnumParameters;
+})(Enum || (Enum = {}));
+export default Enum;
 //# sourceMappingURL=enum.js.map

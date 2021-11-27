@@ -4,7 +4,10 @@
  * @param value
  * @param enumerate
  */
-export default function Enum<Enumerate>(value : unknown, enumerate : Enumerate) : value is Enumerate[keyof Enumerate] {
+export default function Enum<Enumerate>(
+    value : unknown,
+    enumerate : Enumerate
+) : value is Enumerate[keyof Enumerate] {
 
     for(let data in enumerate) {
 
