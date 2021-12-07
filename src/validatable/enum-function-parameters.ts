@@ -5,7 +5,7 @@ import EnumParameters from "../assert/string/enum-parameters";
 
 
 export type Type<Message, Enumerate extends Record<string, any>, Argument extends unknown> =
-    ValidatorReturn<unknown, Argument, Object.UnionOf<Enumerate>, EnumClassParameters<Message, Enumerate, Argument>> & {enumerate : Enumerate};
+    ValidatorReturn<Argument, Object.UnionOf<Enumerate>, EnumClassParameters<Message, Enumerate, Argument>> & {enumerate : Enumerate};
 
 export default function EnumFunctionParameters<Message, Enumerate extends object, Argument extends unknown>(
     value : Argument,

@@ -5,8 +5,8 @@ import MergeWrapper from "@dikac/t-validator/validatable/readonly-wrapper-parame
 import {Object} from "ts-toolbelt";
 import MessageCallback from "@dikac/t-validator/validatable/callback-function-parameter";
 import EnumGuard from "../boolean/enum";
-import MessageDynamic from "@dikac/t-validator/message/function/dynamic-parameter";
-import Dynamic from "@dikac/t-validator/value/dynamic";
+import MessageDynamic from "@dikac/t-validator/message/function/validatable-parameter";
+import Dynamic from "@dikac/t-validator/value/validatable";
 import Enumerate from "../enumerate/enumerate";
 
 export type EnumClassArgument<EnumType extends Record<string, any>, ValueType>
