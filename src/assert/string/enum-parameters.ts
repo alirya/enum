@@ -19,7 +19,7 @@ export default function EnumParameters(
 
     }
 
-    strings.push('value of enum', enumerate.toString())
+    strings.push('value of enum', enumerate.toString());
 
     return strings.join(' ').trim() + '.';
 

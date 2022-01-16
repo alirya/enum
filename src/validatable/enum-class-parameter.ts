@@ -1,13 +1,13 @@
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import Message from "@alirya/message/message";
-import MergeWrapper from "@alirya/validator/validatable/readonly-wrapper-parameter";
-import {Object} from "ts-toolbelt";
-import MessageCallback from "@alirya/validator/validatable/callback-function-parameter";
-import EnumGuard from "../boolean/enum";
-import MessageDynamic from "@alirya/validator/message/function/validatable-parameter";
-import Dynamic from "@alirya/validator/value/validatable";
-import Enumerate from "../enumerate/enumerate";
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import Message from '@alirya/message/message';
+import MergeWrapper from '@alirya/validator/validatable/readonly-wrapper-parameter';
+import {Object} from 'ts-toolbelt';
+import MessageCallback from '@alirya/validator/validatable/callback-function-parameter';
+import EnumGuard from '../boolean/enum';
+import MessageDynamic from '@alirya/validator/message/function/validatable-parameter';
+import Dynamic from '@alirya/validator/value/validatable';
+import Enumerate from '../enumerate/enumerate';
 
 export type EnumClassArgument<EnumType extends Record<string, any>, ValueType>
     = Value<ValueType> & Enumerate<EnumType>;

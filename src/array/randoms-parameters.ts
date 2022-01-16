@@ -1,4 +1,4 @@
-import RandomBoolean from "@alirya/boolean/random";
+import RandomBoolean from '@alirya/boolean/random';
 
 /**
  * pick multiple enum values
@@ -18,7 +18,7 @@ export default function RandomsParameters<
 
         if(random()) {
 
-            values.push(enumerate[property])
+            values.push(enumerate[property]);
         }
     }
 

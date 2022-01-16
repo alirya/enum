@@ -1,13 +1,13 @@
-import Validator from "../../dist/validator/enum-parameters";
-import NumberMessage from "../../dist/assert/string/enum-parameters";
+import Validator from '../../dist/validator/enum-parameters';
+import NumberMessage from '../../dist/assert/string/enum-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`compiler compatible`,function() {
 
     enum EnumSpec {
-        DATA = "DATA",
-        VALUE = "VALUE"
+        DATA = 'DATA',
+        VALUE = 'VALUE'
     }
 
     it(`valid value`,function() {
@@ -19,13 +19,13 @@ describe(`compiler compatible`,function() {
 
             // compiler pass
             let number : EnumSpec = validatable.value;
-            expect(number).toBe("DATA");
+            expect(number).toBe('DATA');
 
         } else {
 
             // @ts-expecerror
             let number : EnumSpec = validatable.value;
-            fail('validatable.valid should false')
+            fail('validatable.valid should false');
         }
     });
 
@@ -38,7 +38,7 @@ describe(`compiler compatible`,function() {
 
             // compiler pass
             let number : EnumSpec = validatable.value;
-            fail('validatable.valid should false')
+            fail('validatable.valid should false');
 
         } else {
 
@@ -86,8 +86,8 @@ describe(`compiler compatible`,function() {
 describe(`validate value`,function() {
 
     enum EnumSpec {
-        DATA = "DATA",
-        VALUE = "VALUE"
+        DATA = 'DATA',
+        VALUE = 'VALUE'
     }
 
     it(`valid`,function() {
@@ -97,7 +97,7 @@ describe(`validate value`,function() {
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(EnumSpec.DATA);
-        expect(typeof validatable.message).toBe("string");
+        expect(typeof validatable.message).toBe('string');
 
     });
 
@@ -108,7 +108,7 @@ describe(`validate value`,function() {
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toBe('a');
-        expect(typeof validatable.message).toBe("string");
+        expect(typeof validatable.message).toBe('string');
 
     });
 });

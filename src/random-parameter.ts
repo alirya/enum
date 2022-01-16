@@ -1,5 +1,5 @@
-import RandomParameters from "./random-parameters";
-import Value from "@alirya/value/value";
+import RandomParameters from './random-parameters';
+import Value from '@alirya/value/value';
 
 /**
  * pick random enum value

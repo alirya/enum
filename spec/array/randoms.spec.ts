@@ -1,6 +1,6 @@
-import RandomEnum from "../../dist/array/randoms-parameters";
+import RandomEnum from '../../dist/array/randoms-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 enum Enumerate {
     DATA0 = 'DATA0',

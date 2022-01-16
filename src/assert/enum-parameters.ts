@@ -1,5 +1,5 @@
-import Guard from "../boolean/enum";
-import Throwable from "./throwable/enum-parameters";
+import Guard from '../boolean/enum';
+import Throwable from './throwable/enum-parameters';
 
 /**
  * assert {@param value} is part of {@param enumerate}

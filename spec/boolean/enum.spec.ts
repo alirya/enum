@@ -1,6 +1,6 @@
-import Type from "../../dist/boolean/enum";
+import Type from '../../dist/boolean/enum';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 enum Enumerate {
     DATA = 'DATA',
@@ -25,12 +25,12 @@ describe(`compiler compatible`,function() {
 
 describe('valid', () => {
 
-    it("enum value", () => {
+    it('enum value', () => {
 
         expect(Type<typeof Enumerate>(Enumerate.DATA, Enumerate)).toBe(true);
     });
 
-    it("string", () => {
+    it('string', () => {
 
         expect(Type<typeof Enumerate>('VALUE', Enumerate)).toBe(true);
     });
@@ -39,7 +39,7 @@ describe('valid', () => {
 
 describe('invalid', () => {
 
-    it("string", () => {
+    it('string', () => {
 
         expect(Type<typeof Enumerate>('NON_VALUE', Enumerate)).toBe(false);
     });

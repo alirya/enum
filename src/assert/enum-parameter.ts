@@ -1,6 +1,6 @@
-import Throwable from "./throwable/enum-parameters";
-import Enumerate from "../enumerate/enumerate";
-import EnumParameters from "./enum-parameters";
+import Throwable from './throwable/enum-parameters';
+import Enumerate from '../enumerate/enumerate';
+import EnumParameters from './enum-parameters';
 
 /**
  * assert {@param value} is part of {@param enumerate}

@@ -1,7 +1,7 @@
-import EnumClassParameters, {EnumClassArgumentMessage} from "./enum-class-parameters";
-import {Object} from "ts-toolbelt";
-import ValidatorReturn from "@alirya/validator/validatable/simple";
-import EnumParameters from "../assert/string/enum-parameters";
+import EnumClassParameters, {EnumClassArgumentMessage} from './enum-class-parameters';
+import {Object} from 'ts-toolbelt';
+import ValidatorReturn from '@alirya/validator/validatable/simple';
+import EnumParameters from '../assert/string/enum-parameters';
 
 
 export type Type<Message, Enumerate extends Record<string, any>, Argument extends unknown> =

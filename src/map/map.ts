@@ -8,7 +8,7 @@ export default function Map<Value>(value : Record<string, Value>) : Map<string, 
 
     for(let property in value) {
 
-        map.set(property, value[property])
+        map.set(property, value[property]);
     }
 
     return map;

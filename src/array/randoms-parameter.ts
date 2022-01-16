@@ -1,6 +1,6 @@
-import RandomBoolean from "@alirya/boolean/random";
-import Enumerate from "../enumerate/enumerate";
-import RandomsParameters from "./randoms-parameters";
+import RandomBoolean from '@alirya/boolean/random';
+import Enumerate from '../enumerate/enumerate';
+import RandomsParameters from './randoms-parameters';
 
 /**
  * pick multiple enum values

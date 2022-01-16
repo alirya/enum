@@ -1,6 +1,6 @@
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import EnumParameters from "./enum-parameters";
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import EnumParameters from './enum-parameters';
 
 export default function EnumParameter(
     {

@@ -1,7 +1,7 @@
-import Validator from "@alirya/validator/simple";
-import EnumValidatable, {EnumClassArgumentMessage} from "../validatable/enum-class-parameters";
-import {Object} from "ts-toolbelt";
-import EnumString from "../assert/string/enum-parameters";
+import Validator from '@alirya/validator/simple';
+import EnumValidatable, {EnumClassArgumentMessage} from '../validatable/enum-class-parameters';
+import {Object} from 'ts-toolbelt';
+import EnumString from '../assert/string/enum-parameters';
 
 /**
  * validate if given value is part of certain enumerate
@@ -33,6 +33,6 @@ export default function EnumParameters <
 
         return new EnumValidatable(value, enumerate, message);
 
-    } as Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate, Object.UnionOf<Enumerate>>>
+    } as Validator<unknown, Object.UnionOf<Enumerate>, EnumValidatable<MessageT, Enumerate, Object.UnionOf<Enumerate>>>;
 
 }

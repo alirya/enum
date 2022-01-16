@@ -1,8 +1,8 @@
-import Validator from "@alirya/validator/simple";
-import EnumValidatable, {EnumClassArgumentMessage} from "../validatable/enum-class-parameter";
-import {Object} from "ts-toolbelt";
-import EnumString from "../assert/string/enum-parameter";
-import EnumParameters from "./enum-parameters";
+import Validator from '@alirya/validator/simple';
+import EnumValidatable, {EnumClassArgumentMessage} from '../validatable/enum-class-parameter';
+import {Object} from 'ts-toolbelt';
+import EnumString from '../assert/string/enum-parameter';
+import EnumParameters from './enum-parameters';
 
 /**
  * validate if given value is part of certain enumerate
