@@ -1,6 +1,6 @@
 import EnumParameter from "../assert/string/enum-parameter";
 import EnumFunctionParameters, {Type} from "./enum-function-parameters";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import {EnumClassArgument, EnumClassArgumentMessage} from "./enum-class-parameter";
 
 export default function EnumFunctionParameter<MessageType, Enumerate extends Record<string, any>, Argument extends unknown>(

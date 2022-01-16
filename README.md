@@ -1,2 +1,2 @@
-# t-enum
+# enum
 typescript enum

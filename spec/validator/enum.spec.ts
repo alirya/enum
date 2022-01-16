@@ -23,7 +23,7 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let number : EnumSpec = validatable.value;
             fail('validatable.valid should false')
         }
@@ -42,9 +42,9 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let number : EnumSpec = validatable.value;
-            // @ts-expect-error
+            // @ts-expecerror
             expect(number).toEqual({});
         }
     });
@@ -55,7 +55,7 @@ describe(`compiler compatible`,function() {
         let validatable = validator(EnumSpec.DATA);
 
         try {
-            // @ts-expect-error
+            // @ts-expecerror
             validatable.valid = true;
             fail('exception should thrown');
         } catch (e) {
@@ -63,7 +63,7 @@ describe(`compiler compatible`,function() {
         }
 
         try {
-            // @ts-expect-error
+            // @ts-expecerror
             validatable.value = true;
             fail('exception should thrown');
         } catch (e) {
@@ -71,7 +71,7 @@ describe(`compiler compatible`,function() {
         }
 
         try {
-            // @ts-expect-error
+            // @ts-expecerror
             validatable.message = 'message';
             fail('exception should thrown');
         } catch (e) {

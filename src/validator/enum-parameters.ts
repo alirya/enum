@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/simple";
+import Validator from "@alirya/validator/simple";
 import EnumValidatable, {EnumClassArgumentMessage} from "../validatable/enum-class-parameters";
 import {Object} from "ts-toolbelt";
 import EnumString from "../assert/string/enum-parameters";

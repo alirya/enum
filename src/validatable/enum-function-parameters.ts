@@ -1,6 +1,6 @@
 import EnumClassParameters, {EnumClassArgumentMessage} from "./enum-class-parameters";
 import {Object} from "ts-toolbelt";
-import ValidatorReturn from "@dikac/t-validator/validatable/simple";
+import ValidatorReturn from "@alirya/validator/validatable/simple";
 import EnumParameters from "../assert/string/enum-parameters";
 
 

@@ -17,7 +17,7 @@ describe(`compiler compatible`,function() {
 
     } else {
 
-        // @ts-expect-error
+        // @ts-expecerror
         let result : Enumerate = argument;
     }
 
