@@ -7,7 +7,7 @@ enum Enumerate {
     VALUE = 'VALUE',
 }
 
-describe(`compiler compatible`,function() {
+it(`compiler compatible`,function() {
 
     let argument : unknown = Enumerate.DATA;
 
@@ -17,7 +17,7 @@ describe(`compiler compatible`,function() {
 
     } else {
 
-        // @ts-expecerror
+        // @ts-expect-error
         let result : Enumerate = argument;
     }
 

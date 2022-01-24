@@ -7,7 +7,7 @@ enum Enumerate {
     VALUE = 'VALUE',
 }
 
-describe(`compiler compatible`,function() {
+it(`compiler compatible`,function() {
 
     let argument : unknown = Enumerate.DATA;
     Type(argument, Enumerate);
