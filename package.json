@@ -1,6 +1,6 @@
 {
   "name": "@alirya/enum",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Typescript enum",
   "dependencies": {
     "tslib": "^2.3.1",
