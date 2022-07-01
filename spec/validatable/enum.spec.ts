@@ -1,5 +1,5 @@
-import Validatable from '../../dist/validatable/enum-function-parameters';
-import EnumMessage from '../../dist/assert/string/enum-parameters';
+import {EnumParameters} from '../../dist/validatable/enum';
+import EnumMessage from '../../dist/assert/string/enum';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,7 +12,7 @@ describe(`compiler compatible`,function() {
 
     it(`valid value`,function() {
 
-        let validatable = Validatable(<unknown>'DATA', EnumSpec, EnumMessage);
+        let validatable = EnumParameters(<unknown>'DATA', EnumSpec, EnumMessage.Parameters);
 
         if(validatable.valid) {
 
@@ -30,7 +30,7 @@ describe(`compiler compatible`,function() {
 
     it(`invalid value`,function() {
 
-        let validatable = Validatable(<unknown>{}, EnumSpec, EnumMessage);
+        let validatable = EnumParameters(<unknown>{}, EnumSpec, EnumMessage.Parameters);
 
         if(validatable.valid) {
 
@@ -49,7 +49,7 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validatable = Validatable(<unknown>EnumSpec.DATA, EnumSpec, EnumMessage);
+        let validatable = EnumParameters(<unknown>EnumSpec.DATA, EnumSpec, EnumMessage.Parameters);
 
         try {
             // @ts-expect-error
@@ -87,7 +87,7 @@ describe(`compiler compatible`,function() {
 
     it(`valid enum`,function() {
 
-        let validatable = Validatable(EnumSpec.DATA, EnumSpec, EnumMessage);
+        let validatable = EnumParameters(EnumSpec.DATA, EnumSpec, EnumMessage.Parameters);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(EnumSpec.DATA);
@@ -97,7 +97,7 @@ describe(`compiler compatible`,function() {
 
     it(`valid string`,function() {
 
-        let validatable = Validatable('DATA', EnumSpec, EnumMessage);
+        let validatable = EnumParameters('DATA', EnumSpec, EnumMessage.Parameters);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe('DATA');
@@ -107,7 +107,7 @@ describe(`compiler compatible`,function() {
 
     it(`invalid`,function() {
 
-        let validatable = Validatable('a', EnumSpec, EnumMessage);
+        let validatable = EnumParameters('a', EnumSpec, EnumMessage.Parameters);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toBe('a');

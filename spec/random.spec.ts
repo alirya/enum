@@ -1,4 +1,4 @@
-import RandomEnum from '../dist/random-parameters';
+import {RandomParameters} from '../dist/random';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -28,7 +28,7 @@ for(let i = 0; i <= 10; i++) {
 
         it(`iterate ${i}`, () => {
 
-            let random = RandomEnum(Enumerate);
+            let random = RandomParameters(Enumerate);
 
             let valid = false;
 

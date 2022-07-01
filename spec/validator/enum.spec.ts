@@ -1,5 +1,5 @@
-import Validator from '../../dist/validator/enum-parameters';
-import NumberMessage from '../../dist/assert/string/enum-parameters';
+import {EnumParameters} from '../../dist/validator/enum';
+import NumberMessage from '../../dist/assert/string/enum';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,7 +12,7 @@ describe(`compiler compatible`,function() {
 
     it(`valid value`,function() {
 
-        let validator = Validator(EnumSpec, NumberMessage);
+        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
         let validatable = validator(<unknown>EnumSpec.DATA);
 
         if(validatable.valid) {
@@ -31,7 +31,7 @@ describe(`compiler compatible`,function() {
 
     it(`invalid value`,function() {
 
-        let validator = Validator(EnumSpec, NumberMessage);
+        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
         let validatable = validator({});
 
         if(validatable.valid) {
@@ -51,7 +51,7 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validator = Validator(EnumSpec, NumberMessage);
+        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
         let validatable = validator(EnumSpec.DATA);
 
         try {
@@ -92,7 +92,7 @@ describe(`validate value`,function() {
 
     it(`valid`,function() {
 
-        let validator = Validator(EnumSpec, NumberMessage);
+        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
         let validatable = validator(EnumSpec.DATA);
 
         expect(validatable.valid).toBe(true);
@@ -103,7 +103,7 @@ describe(`validate value`,function() {
 
     it(`invalid`,function() {
 
-        let validator = Validator(EnumSpec, NumberMessage);
+        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
         let validatable = validator('a');
 
         expect(validatable.valid).toBe(false);
