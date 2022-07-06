@@ -1,4 +1,4 @@
-import {RandomsParameters} from '../../dist/array/randoms';
+import {RandomsParameters} from '../../dist/array/randoms.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

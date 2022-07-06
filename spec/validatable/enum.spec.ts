@@ -1,5 +1,5 @@
-import {EnumParameters} from '../../dist/validatable/enum';
-import EnumMessage from '../../dist/assert/string/enum';
+import {EnumParameters} from '../../dist/validatable/enum.js';
+import EnumMessage from '../../dist/assert/string/enum.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

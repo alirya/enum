@@ -1,4 +1,4 @@
-import Type from '../../dist/boolean/enum';
+import Type from '../../dist/boolean/enum.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

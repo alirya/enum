@@ -1,6 +1,6 @@
-import Validator from '@alirya/validator/simple';
+import Validator from '@alirya/validator/simple.js';
 import {Object} from 'ts-toolbelt';
-import EnumMessage from '../assert/string/enum';
+import EnumMessage from '../assert/string/enum.js';
 
 /**
  * validate if given value is part of certain enumerate
@@ -36,7 +36,7 @@ export function EnumParameters <
 
 }
 
-import EnumValidatable, {EnumArgumentMessage, EnumArgumentsMessage, EnumClassType} from '../validatable/enum';
+import EnumValidatable, {EnumArgumentMessage, EnumArgumentsMessage, EnumClassType} from '../validatable/enum.js';
 
 /**
  * validate if given value is part of certain enumerate

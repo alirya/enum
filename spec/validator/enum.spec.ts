@@ -1,5 +1,5 @@
-import {EnumParameters} from '../../dist/validator/enum';
-import NumberMessage from '../../dist/assert/string/enum';
+import {EnumParameters} from '../../dist/validator/enum.js';
+import NumberMessage from '../../dist/assert/string/enum.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

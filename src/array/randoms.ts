@@ -1,5 +1,5 @@
-import RandomBoolean from '@alirya/boolean/random';
-import Enumerate from '../enumerate/enumerate';
+import RandomBoolean from '@alirya/boolean/random.js';
+import Enumerate from '../enumerate/enumerate.js';
 
 /**
  * pick multiple enum values
