@@ -2,6 +2,7 @@ import {Object} from 'ts-toolbelt';
 import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable';
 import Message from '@alirya/message/message';
 import {ReadonlyWrapperParameter, ReadonlyWrapperType} from '@alirya/validator/validatable/readonly-wrapper';
 import {CallbackParameter} from '@alirya/validator/validatable/callback';
@@ -24,7 +25,7 @@ export type EnumArgumentMessage<
 
 export class EnumClassParameter<MessageType, EnumType extends Record<string, any>, ValueType>
     extends ReadonlyWrapperParameter<Value<unknown|Object.UnionOf<EnumType>> & Message<MessageType> & Validatable>
-    implements EnumClassType<MessageType, EnumType, ValueType>
+    implements  EnumClassContext<EnumType>
 {
     readonly enumerate : EnumType;
 
@@ -76,38 +77,38 @@ export class EnumClassParameters<MessageType, Enumerate extends object, ValueTyp
     }
 }
 
-export interface EnumClassType<
-    MessageType,
+export interface EnumClassContext<
+    // MessageType,
     EnumType extends Record<string, any>,
-    ValueType
+    // ValueType
 >
-    extends ReadonlyWrapperType<Value<unknown|Object.UnionOf<EnumType>>, Message<MessageType>, Validatable>, Enumerate<EnumType> {
+    extends /*ReadonlyWrapperType<Value<unknown|Object.UnionOf<EnumType>>, Message<MessageType>, Validatable>,*/ Enumerate<EnumType> {
 }
 
 
-export type EnumReturn<Message, Enumerate extends Record<string, any>, Argument extends unknown> =
-    ValidatorReturn<Argument, Object.UnionOf<Enumerate>, EnumClassParameters<Message, Enumerate, Argument>> & {enumerate : Enumerate};
+export type EnumValidatorType<Message, Enumerate extends Record<string, any>, Argument extends unknown> =
+    ValidatorReturn<Argument, Object.UnionOf<Enumerate>, Message, EnumClassContext<Enumerate>>;
 
 
 export function EnumParameters<Message, Enumerate extends object, Argument extends unknown>(
     value : Argument,
     enumerate : Enumerate,
     message : EnumArgumentsMessage<Message, Enumerate>
-) :  EnumReturn<Message, Enumerate, Argument>;
+) : EnumValidatorType<Message, Enumerate, Argument>;
 
 export function EnumParameters<Enumerate extends Record<string, any>, Argument extends unknown>(
     value : Argument,
     enumerate : Enumerate,
-) :  EnumReturn<string, Enumerate, Argument>;
+) : EnumValidatorType<string, Enumerate, Argument>;
 
 
 export function EnumParameters<Message, Enumerate extends Record<string, any>, Argument extends unknown>(
     value : Argument,
     enumerate : Enumerate,
     message : EnumArgumentsMessage<Message|string, Enumerate> = EnumMessage.Parameters
-) :  EnumReturn<Message, Enumerate, Argument> {
+) :  EnumValidatorType<Message, Enumerate, Argument> {
 
-    return <EnumReturn<Message, Enumerate, Argument>> new EnumClassParameters(value, enumerate, message);
+    return <EnumValidatorType<Message, Enumerate, Argument>> new EnumClassParameters(value, enumerate, message);
 }
 
 
@@ -117,14 +118,14 @@ export function EnumParameter<MessageType, Enumerate extends Record<string, any>
         enumerate,
         message,
     } : EnumArgument<Enumerate, Argument> & Message<EnumArgumentMessage<MessageType, Enumerate>>
-) :  EnumReturn<MessageType, Enumerate, Argument>;
+) :  EnumValidatorType<MessageType, Enumerate, Argument>;
 
 export function EnumParameter<Enumerate extends Record<string, any>, Argument extends unknown>(
     {
         value,
         enumerate,
     } : EnumArgument<Enumerate, Argument>
-) :  EnumReturn<string, Enumerate, Argument>;
+) :  EnumValidatorType<string, Enumerate, Argument>;
 
 
 export function EnumParameter<MessageType, Enumerate extends Record<string, any>, Argument extends unknown>(
@@ -133,7 +134,7 @@ export function EnumParameter<MessageType, Enumerate extends Record<string, any>
         enumerate,
         message = EnumMessage.Parameter,
     } : EnumArgument<Enumerate, Argument> & Partial<Message<EnumArgumentMessage<MessageType|string, Enumerate>>>
-) :  EnumReturn<MessageType|string, Enumerate, Argument> {
+) :  EnumValidatorType<MessageType|string, Enumerate, Argument> {
 
     return EnumParameters(
         value,
@@ -164,23 +165,24 @@ namespace EnumClass {
         Enumerate
     >;
 
-    export interface ClassType<
-        MessageType,
+    export interface Context<
+        // MessageType,
         EnumType extends Record<string, any>,
-        ValueType
-    > extends EnumClassType<
-        MessageType,
-        EnumType,
-        ValueType
+        // ValueType
+    > extends EnumClassContext<
+        // MessageType,
+        EnumType
+        // ValueType
     > {}
-    export type Return<
+    export type Validator<
         MessageType,
         EnumType extends Record<string, any>,
         ValueType
-    > = EnumReturn<
+    > = EnumValidatorType<
         MessageType,
         EnumType,
         ValueType
     >;
 }
+
 export default EnumClass;
