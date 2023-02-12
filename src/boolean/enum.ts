@@ -9,7 +9,7 @@ export default function Enum<Enumerate>(
     enumerate : Enumerate
 ) : value is Enumerate[keyof Enumerate] {
 
-    for(let data in enumerate) {
+    for(const data in enumerate) {
 
         if(value === enumerate[data]) {
 

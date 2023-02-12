@@ -1,4 +1,4 @@
-import Type from '../../dist/boolean/enum';
+import Type from '../../dist/boolean/enum.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -9,16 +9,16 @@ enum Enumerate {
 
 it(`compiler compatible`,function() {
 
-    let argument : unknown = Enumerate.DATA;
+    const argument : unknown = Enumerate.DATA;
 
     if(Type(argument, Enumerate)) {
 
-        let result : Enumerate = argument;
+        const result : Enumerate = argument;
 
     } else {
 
         // @ts-expect-error
-        let result : Enumerate = argument;
+        const result : Enumerate = argument;
     }
 
 });

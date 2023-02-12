@@ -1,4 +1,4 @@
-import {EnumParameters} from '../../../dist/assert/string/enum';
+import {EnumParameters} from '../../../dist/assert/string/enum.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

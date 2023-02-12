@@ -1,6 +1,6 @@
-import Guard from '../boolean/enum';
-import Throwable from './throwable/enum';
-import Enumerate from '../enumerate/enumerate';
+import Guard from '../boolean/enum.js';
+import Throwable from './throwable/enum.js';
+import Enumerate from '../enumerate/enumerate.js';
 
 /**
  * assert {@param value} is part of {@param enumerate}

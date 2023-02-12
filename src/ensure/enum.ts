@@ -1,5 +1,5 @@
-import {EnumParameters as AssertEnumParameters} from '../assert/enum';
-import Throwable from '../assert/throwable/enum';
+import {EnumParameters as AssertEnumParameters} from '../assert/enum.js';
+import Throwable from '../assert/throwable/enum.js';
 
 /**
  * assert {@param value} is part of {@param enumerate}, if valid

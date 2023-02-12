@@ -1,4 +1,4 @@
-import {RandomsParameters} from '../../dist/array/randoms';
+import {RandomsParameters} from '../../dist/array/randoms.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -28,11 +28,11 @@ for(let i = 0; i <= 10; i++) {
 
         it(`iterate ${i}`, () => {
 
-            let random = RandomsParameters(Enumerate);
+            const random = RandomsParameters(Enumerate);
 
-            TOP : for (let value of random) {
+            TOP : for (const value of random) {
 
-                for(let property in Enumerate) {
+                for(const property in Enumerate) {
 
                     if(Enumerate[property] === value) {
 

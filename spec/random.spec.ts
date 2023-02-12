@@ -1,4 +1,4 @@
-import {RandomParameters} from '../dist/random';
+import {RandomParameters} from '../dist/random.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -28,11 +28,11 @@ for(let i = 0; i <= 10; i++) {
 
         it(`iterate ${i}`, () => {
 
-            let random = RandomParameters(Enumerate);
+            const random = RandomParameters(Enumerate);
 
             let valid = false;
 
-            for(let property in Enumerate) {
+            for(const property in Enumerate) {
 
                 if(Enumerate[property] === random) {
 

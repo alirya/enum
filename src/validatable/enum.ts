@@ -1,16 +1,16 @@
 import {Object} from 'ts-toolbelt';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable';
-import Message from '@alirya/message/message';
-import {ReadonlyWrapperParameter, ReadonlyWrapperType} from '@alirya/validator/validatable/readonly-wrapper';
-import {CallbackParameter} from '@alirya/validator/validatable/callback';
-import EnumGuard from '../boolean/enum';
-import DynamicValidatable from '@alirya/validator/value/validatable';
-import Enumerate from '../enumerate/enumerate';
-import ValidatorReturn from '@alirya/validator/validatable/simple';
-import EnumMessage from '../assert/string/enum';
+import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import Message from '@alirya/message/message.js';
+import {ReadonlyWrapperParameter, ReadonlyWrapperType} from '@alirya/validator/validatable/readonly-wrapper.js';
+import {CallbackParameter} from '@alirya/validator/validatable/callback.js';
+import EnumGuard from '../boolean/enum.js';
+import DynamicValidatable from '@alirya/validator/value/validatable.js';
+import Enumerate from '../enumerate/enumerate.js';
+import ValidatorReturn from '@alirya/validator/validatable/simple.js';
+import EnumMessage from '../assert/string/enum.js';
 
 
 
@@ -77,13 +77,11 @@ export class EnumClassParameters<MessageType, Enumerate extends object, ValueTyp
     }
 }
 
-export interface EnumClassContext<
+export type EnumClassContext<
     // MessageType,
     EnumType extends Record<string, any>,
     // ValueType
->
-    extends /*ReadonlyWrapperType<Value<unknown|Object.UnionOf<EnumType>>, Message<MessageType>, Validatable>,*/ Enumerate<EnumType> {
-}
+> = Enumerate<EnumType>
 
 
 export type EnumValidatorType<Message, Enumerate extends Record<string, any>, Argument extends unknown> =
@@ -165,15 +163,15 @@ namespace EnumClass {
         Enumerate
     >;
 
-    export interface Context<
+    export type Context<
         // MessageType,
         EnumType extends Record<string, any>,
         // ValueType
-    > extends EnumClassContext<
+    > = EnumClassContext<
         // MessageType,
         EnumType
         // ValueType
-    > {}
+    >
     export type Validator<
         MessageType,
         EnumType extends Record<string, any>,

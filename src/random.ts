@@ -1,5 +1,5 @@
-import RandomBoolean from '@alirya/boolean/random';
-import Value from '@alirya/value/value';
+import RandomBoolean from '@alirya/boolean/random.js';
+import Value from '@alirya/value/value.js';
 
 /**
  * pick random enum value
@@ -12,7 +12,7 @@ export function RandomParameters<Enumerate extends Record<string, number|string>
     random : () => boolean = RandomBoolean
 ) : Enumerate[keyof Enumerate] {
 
-    let keys : (keyof Enumerate)[] = Object.keys(enumerate);
+    const keys : (keyof Enumerate)[] = Object.keys(enumerate);
 
     while (keys.length > 1) {
 
@@ -22,7 +22,7 @@ export function RandomParameters<Enumerate extends Record<string, number|string>
         }
     }
 
-    let key = <keyof Enumerate>keys.shift();
+    const key = <keyof Enumerate>keys.shift();
 
 
     return enumerate[key];

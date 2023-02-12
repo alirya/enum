@@ -1,10 +1,10 @@
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 export function EnumParameters(
     value : unknown,
     valid : boolean,
     enumerate : string|Record<string, any> = '',
-    subject : string = 'value',
+    subject  = 'value',
 ) : string {
 
     const strings : string[] = [];

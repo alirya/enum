@@ -1,4 +1,4 @@
-import {EnumParameters} from '../../dist/assert/enum';
+import {EnumParameters} from '../../dist/assert/enum.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -9,22 +9,22 @@ enum Enumerate {
 
 it(`compiler compatible`,function() {
 
-    let argument : unknown = Enumerate.DATA;
+    const argument : unknown = Enumerate.DATA;
     EnumParameters(argument, Enumerate);
-    let result : Enumerate = argument;
+    const result : Enumerate = argument;
 
 });
 
 describe('valid', () => {
 
     it('enum value', () => {
-        let value = Enumerate.DATA;
+        const value = Enumerate.DATA;
         EnumParameters<typeof Enumerate>(value, Enumerate);
         expect(value).toBe(Enumerate.DATA);
     });
 
     it('string', () => {
-        let value = 'DATA';
+        const value = 'DATA';
         EnumParameters<typeof Enumerate>(value, Enumerate);
         expect(value).toBe(Enumerate.DATA);
     });

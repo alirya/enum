@@ -1,5 +1,5 @@
-import {EnumParameters} from '../../dist/validator/enum';
-import NumberMessage from '../../dist/assert/string/enum';
+import {EnumParameters} from '../../dist/validator/enum.js';
+import NumberMessage from '../../dist/assert/string/enum.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,38 +12,38 @@ describe(`compiler compatible`,function() {
 
     it(`valid value`,function() {
 
-        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
-        let validatable = validator(<unknown>EnumSpec.DATA);
+        const validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
+        const validatable = validator(<unknown>EnumSpec.DATA);
 
         if(validatable.valid) {
 
             // compiler pass
-            let number : EnumSpec = validatable.value;
+            const number : EnumSpec = validatable.value;
             expect(number).toBe('DATA');
 
         } else {
 
             // @ts-expect-error
-            let number : EnumSpec = validatable.value;
+            const number : EnumSpec = validatable.value;
             fail('validatable.valid should false');
         }
     });
 
     it(`invalid value`,function() {
 
-        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
-        let validatable = validator({});
+        const validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
+        const validatable = validator({});
 
         if(validatable.valid) {
 
             // compiler pass
-            let number : EnumSpec = validatable.value;
+            const number : EnumSpec = validatable.value;
             fail('validatable.valid should false');
 
         } else {
 
             // @ts-expect-error
-            let number : EnumSpec = validatable.value;
+            const number : EnumSpec = validatable.value;
             // @ts-expect-error
             expect(number).toEqual({});
         }
@@ -51,8 +51,8 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
-        let validatable = validator(EnumSpec.DATA);
+        const validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
+        const validatable = validator(EnumSpec.DATA);
 
         try {
             // @ts-expect-error
@@ -72,7 +72,7 @@ describe(`compiler compatible`,function() {
 
         try {
             // @ts-expect-error
-            validatable.message = 'message';
+            validatable.message.js = 'message';
             fail('exception should thrown');
         } catch (e) {
             expect(e).toBeInstanceOf(Error);
@@ -92,8 +92,8 @@ describe(`validate value`,function() {
 
     it(`valid`,function() {
 
-        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
-        let validatable = validator(EnumSpec.DATA);
+        const validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
+        const validatable = validator(EnumSpec.DATA);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(EnumSpec.DATA);
@@ -103,8 +103,8 @@ describe(`validate value`,function() {
 
     it(`invalid`,function() {
 
-        let validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
-        let validatable = validator('a');
+        const validator = EnumParameters(EnumSpec, NumberMessage.Parameters);
+        const validatable = validator('a');
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toBe('a');

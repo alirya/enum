@@ -1,5 +1,5 @@
-import RandomBoolean from '@alirya/boolean/random';
-import Enumerate from '../enumerate/enumerate';
+import RandomBoolean from '@alirya/boolean/random.js';
+import Enumerate from '../enumerate/enumerate.js';
 
 /**
  * pick multiple enum values
@@ -13,9 +13,9 @@ export function RandomsParameters<
     random : () => boolean = RandomBoolean
 ) : Enumerate[keyof Enumerate][] {
 
-    let values : Enumerate[(keyof Enumerate)][] = [];
+    const values : Enumerate[(keyof Enumerate)][] = [];
 
-    for (let property in enumerate) {
+    for (const property in enumerate) {
 
         if(random()) {
 
