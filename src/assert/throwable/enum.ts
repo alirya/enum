@@ -1,5 +1,5 @@
 import EnumType from '../string/enum.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 
 export function EnumParameters(
     value : unknown,

@@ -1,4 +1,4 @@
-import RandomBoolean from '@alirya/boolean/random.js';
+import RandomBoolean from '@axiona/boolean/random.js';
 import Enumerate from '../enumerate/enumerate.js';
 
 /**

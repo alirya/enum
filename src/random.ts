@@ -1,5 +1,5 @@
-import RandomBoolean from '@alirya/boolean/random.js';
-import Value from '@alirya/value/value.js';
+import RandomBoolean from '@axiona/boolean/random.js';
+import Value from '@axiona/value/value.js';
 
 /**
  * pick random enum value

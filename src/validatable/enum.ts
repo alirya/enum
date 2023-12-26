@@ -1,15 +1,15 @@
 import {Object} from 'ts-toolbelt';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
-import Value from '@alirya/value/value.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
-import Message from '@alirya/message/message.js';
-import {ReadonlyWrapperParameter, ReadonlyWrapperType} from '@alirya/validator/validatable/readonly-wrapper.js';
-import {CallbackParameter} from '@alirya/validator/validatable/callback.js';
+import {ValidatableParameters, ValidatableParameter} from '@axiona/validator/message/function/validatable.js';
+import Value from '@axiona/value/value.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import ValidatorValidatable from '@axiona/validator/validatable/validatable.js';
+import Message from '@axiona/message/message.js';
+import {ReadonlyWrapperParameter, ReadonlyWrapperType} from '@axiona/validator/validatable/readonly-wrapper.js';
+import {CallbackParameter} from '@axiona/validator/validatable/callback.js';
 import EnumGuard from '../boolean/enum.js';
-import DynamicValidatable from '@alirya/validator/value/validatable.js';
+import DynamicValidatable from '@axiona/validator/value/validatable.js';
 import Enumerate from '../enumerate/enumerate.js';
-import ValidatorReturn from '@alirya/validator/validatable/simple.js';
+import ValidatorReturn from '@axiona/validator/validatable/simple.js';
 import EnumMessage from '../assert/string/enum.js';
 
 
